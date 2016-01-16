@@ -1,7 +1,7 @@
 
 # 关于闭包
 
-###  首先看 sample
+###  首先看下 sample1
 
 > 闭包是运行时中的概念, 不能讲哪个函数是一个闭包, 而是哪个函数在运行时存在一个闭包. 有时候, 好几个函数都可以组成一个闭包 [来源](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html#comment-222342)
 > 
