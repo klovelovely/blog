@@ -4,30 +4,28 @@
 ###  首先看下 sample1
 
 > 闭包是运行时中的概念, 不能讲哪个函数是一个闭包, 而是哪个函数在运行时存在一个闭包. 有时候, 好几个函数都可以组成一个闭包 [来源](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html#comment-222342)
-> 
->     function ff() {
->         var local = 1;
->         this.add1 = function () {
->             return ++local;
->         };
->         this.add2 = function () {
->             return ++local;
->         }
->     }
->     
->     var f1 = new ff();
->     alert(f1.add1()); // 2
->     alert(f1.add2()); // 3
-> 
 
-// 个人感觉这种观点比较容易理解, 最重要的是 "闭包是运行时中的概念", 我们可以基于这个前提继续往下看
-// 另外, 这里贴上 Mozilla 的开发者文档中对 "闭包" 的解释 (E 文, 感兴趣可以看一下): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+个人感觉 "闭包是运行时中的概念", 基于这种观点去理解 JavaScript 的闭包的话会比较容易一些.
+
+```javascript
+function ff() {
+    var local = 1;
+    this.add1 = function () {
+        return ++local;
+    };
+    this.add2 = function () {
+        return ++local;
+    }
+}
+```
+
+> 另外感兴趣的话可以看下这个 [Mozilla 的开发者文档中对 "闭包" 的解释](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
 
 ---
 
 ### 然后是 sample2
 
-// 下面的demo用到了 JavaScript 的 "立即执行函数" 和 "闭包" 两个特性.
+下面的demo用到了 JavaScript 的 "立即执行函数" 和 "闭包" 两个特性.
 
     var count = 100;
     while (!!count) {
@@ -55,6 +53,6 @@
         
     }
 
-// PS: @manxisuo 解释了 "立即执行函数" 和 "闭包" 之间的区别和关联: http://segmentfault.com/q/1010000004140838
+PS: @manxisuo 解释了 "立即执行函数" 和 "闭包" 之间的区别和关联: http://segmentfault.com/q/1010000004140838
 
 > Written with [StackEdit](https://stackedit.io/).
